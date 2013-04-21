@@ -1,0 +1,22 @@
+$ ->
+  imageCount = ->
+    $("#auth-images img.selected").length
+
+  validCount = ->
+    imageCount() <= <%= User.maximum_categories %>
+
+  $("#auth-images td img").click ->
+    $this = $(this)
+    if $this.hasClass("selected")
+      $this.removeClass "selected"
+      $("#auth-form").find("input[value='#{$this.attr("class")}'']").remove()
+    else
+      if validCount()
+        input = "<input type='hidden' name='image_auth_categories[]'' value='#{$(this).attr("class")}' />"
+        $("#auth-form fieldset").append input
+        $this.addClass "selected"
+
+  $("#auth-form").submit (e) ->
+    e.preventDefault()
+
+    $(this).get(0).submit() if validCount()

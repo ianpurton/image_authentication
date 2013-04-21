@@ -1,0 +1,7 @@
+en:
+  your_account_has_now_been_locked: "Your account has now been locked for 2 hours"
+  please_select_your_images: "Please select your images"
+  confirm_selection: "Confirm Selection"
+  please_choose_your_images: "Please choose your image selection"
+  please_confirm_your_selection: "Please confirm your image selection"
+  choose_a_maximum_of: "Choose a maximum of %{count} images"

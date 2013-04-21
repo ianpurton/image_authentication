@@ -1,0 +1,16 @@
+#auth-images {
+  margin: 0 auto;
+  border-collapse: collapse;
+
+  td {
+    padding: 5px;
+  }
+
+  img {
+    border: 3px solid #f1f1f1;
+  }
+
+  img.selected {
+    border: 3px solid #66cc33;
+  }
+}

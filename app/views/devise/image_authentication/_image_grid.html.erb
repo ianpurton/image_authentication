@@ -1,0 +1,11 @@
+<table id="auth-images">
+  <% @auth_categories.in_groups_of(Math.sqrt(@auth_categories.size).ceil, false) do |group| %>
+    <tr>
+      <% group.each do |cat| %>
+        <td>
+          <%= image_tag("image_auth/#{cat}/#{rand(1..20)}.png", :class => cat) %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

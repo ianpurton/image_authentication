@@ -1,0 +1,13 @@
+<div class="external-user-session">
+  <h2><%= t(:please_select_your_images) %></h2>
+
+  <%= render :partial => "devise/image_auth/image_grid" %>
+
+  <%= form_for(resource, :url => user_image_authentication_url, :html => { :id => 'auth-form', :method => :put }) do |form| %>
+    <fieldset></fieldset>
+
+    <div class="form-actions">
+      <%= submit_tag(t(:confirm_selection), :class => 'btn btn-success') %>
+    </div>
+  <% end %>
+</div>
