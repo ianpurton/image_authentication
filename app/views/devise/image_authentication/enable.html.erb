@@ -2,7 +2,7 @@
   <h2><%= t(:please_choose_your_images) %></h2>
   <h2><%= t(:choose_a_maximum_of, :count => User.maximum_categories) %></h2>
 
-  <%= render :partial => "devise/image_auth/image_grid" %>
+  <%= render :partial => "devise/image_authentication/image_grid" %>
 
   <%= form_for(resource, :url => enable_user_image_authentication_url, :html => { :id => 'auth-form', :method => :put }) do |form| %>
     <fieldset></fieldset>
