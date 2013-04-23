@@ -1,6 +1,6 @@
-<div class="external-user-session">
+<div class="image-authentication">
   <h2><%= t(:please_choose_your_images) %></h2>
-  <h2><%= t(:choose_a_maximum_of, :count => User.maximum_categories) %></h2>
+  <h3><%= t(:choose_a_maximum_of, :count => User.maximum_categories) %></h3>
 
   <%= render :partial => "devise/image_authentication/image_grid" %>
 

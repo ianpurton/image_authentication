@@ -1,7 +1,7 @@
 class Devise::ImageAuthenticationController < DeviseController
 
   prepend_before_filter :authenticate_scope!
-  before_filter :prepare_and_validate, :handle_image_auth
+  before_filter :prepare_and_validate, :handle_image_authentication
   before_filter :setup_auth_categories, :only => [ :confirm, :show ]
 
   def enable
@@ -25,7 +25,7 @@ class Devise::ImageAuthenticationController < DeviseController
 
   def confirm
     if resource.valid_images?(params[:image_auth_categories])
-      resource.image_auth_enabled = true
+      resource.image_authentication_enabled = true
       resource.save
 
       redirect_to session["user_return_to"]
@@ -35,20 +35,20 @@ class Devise::ImageAuthenticationController < DeviseController
   end
 
   def disable
-    resource.auth_categories    = nil
-    resource.image_auth_enabled = false
+    resource.auth_categories_mask         = nil
+    resource.image_authentication_enabled = false
     resource.save
 
     redirect_to :back
   end
 
   def show
-    return redirect_to :back if !resource.image_auth_enabled?
+    return redirect_to :back if !resource.image_authentication_enabled?
   end
 
   def update
     if resource.valid_images?(params[:image_auth_categories])
-      warden.session(resource_name)[:requires_image_auth] = false
+      warden.session(resource_name)[:requires_image_authentication] = false
       sign_in resource_name, resource, :bypass => true
 
       redirect_to session["user_return_to"]
