@@ -10,7 +10,7 @@ If you wish to use the locking feature of this extension ensure you have already
 
 Add the gem to your Gemfile:
 
-    gem 'image_auth'
+    gem 'image_authentication'
 
 Now bundle:
 
@@ -18,7 +18,7 @@ Now bundle:
 
 To add the require migration and configuration to your model, run:
 
-    bundle exec rails g image_auth MODEL
+    bundle exec rails g image_authentication MODEL
 
 Now run the migration
 
@@ -37,6 +37,9 @@ And the number of images available to select is set using:
     config.maximum_categories = 3
 
 This defaults to 3
+
+You'll now want to provide a link to 'enable_user_image_authentication_path' to user's can set their images and enable this.
+You will also want to provide another link to 'disable_user_image_authentication_path' so a user can disable image authentication.
 
 ## Credits
 
