@@ -1,6 +1,9 @@
 ## Image Based Authentication For Devise
 
 [![Build Status](https://travis-ci.org/invisiblelines/image_authentication.png?branch=master)](https://travis-ci.org/invisiblelines/image_authentication)
+[![Code Climate](https://codeclimate.com/github/invisiblelines/image_authentication.png)](https://codeclimate.com/github/invisiblelines/image_authentication)
+[![Dependency Status](https://gemnasium.com/invisiblelines/image_authentication.png)](https://gemnasium.com/invisiblelines/image_authentication)
+
 
 Allows your users to create an image based key that they must select after entering their usual email/password for added security.
 
