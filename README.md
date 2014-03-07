@@ -1,5 +1,7 @@
 ## Image Based Authentication For Devise
 
+[![Build Status](https://travis-ci.org/invisiblelines/image_authentication.png?branch=master)](https://travis-ci.org/invisiblelines/image_authentication)
+
 Allows your users to create an image based key that they must select after entering their usual email/password for added security.
 
 ## Prerequistes
