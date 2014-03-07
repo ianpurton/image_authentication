@@ -40,12 +40,10 @@ module Devise
         Categories.reject { |c| ((auth_categories_mask || 0 ) & 2**Categories.index(c)).zero? }
       end
 
-      def requires_image_authentication?(request)
-        image_authentication_enabled?
-      end
-
       def valid_images?(categories)
-        (auth_categories - Categories).empty?
+        return false if categories.nil?
+
+        (categories - auth_categories).empty?
       end
 
       def all_auth_categories

@@ -15,3 +15,7 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+.DS_Store
+spec/dummy/logs
+spec/dummy/database.yml
+spec/dummy/db/*.sqlite3
