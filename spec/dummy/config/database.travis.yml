@@ -3,3 +3,15 @@ postgresql: &postgresql
   username: postgres
   password:
   database: image_authentication_<%= Rails.env %>
+
+defaults: &defaults
+  pool: 5
+  timeout: 5000
+  host: localhost
+  <<: *<%= ENV['DB'] || "postgresql" %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
