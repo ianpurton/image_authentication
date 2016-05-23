@@ -35,19 +35,19 @@ describe Devise::Models::ImageAuthenticatable do
 
     context 'with matching categories' do
       it 'returns true' do
-        expect(user.valid_images?(valid_categories)).to be_true
+        expect(user.valid_images?(valid_categories)).to be_truthy
       end
     end
 
     context 'with different categories' do
       it 'returns false' do
-        expect(user.valid_images?(other_categories)).to be_false
+        expect(user.valid_images?(other_categories)).to be_falsey
       end
     end
 
     context 'with no categories' do
       it 'returns false' do
-        expect(user.valid_images?(nil)).to be_false
+        expect(user.valid_images?(nil)).to be_falsey
       end
     end
   end
@@ -71,7 +71,7 @@ describe Devise::Models::ImageAuthenticatable do
         end
 
         it 'returns true' do
-          expect(user.max_login_attempts?).to be_true
+          expect(user.max_login_attempts?).to be_truthy
         end
       end
 
@@ -81,7 +81,7 @@ describe Devise::Models::ImageAuthenticatable do
         end
 
         it 'returns false' do
-          expect(user.max_login_attempts?).to be_false
+          expect(user.max_login_attempts?).to be_falsey
         end
       end
     end
@@ -93,7 +93,7 @@ describe Devise::Models::ImageAuthenticatable do
       end
 
       it 'returns false' do
-        expect(user.max_login_attempts?).to be_false
+        expect(user.max_login_attempts?).to be_falsey
       end
     end
   end
