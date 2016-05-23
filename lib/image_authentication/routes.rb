@@ -3,7 +3,7 @@ module ActionDispatch::Routing
     protected
 
       def devise_image_authentication(mapping, controllers)
-        resource :image_authentication, 
+        resource :image_authentication,
           :only       => [:show, :update, :enable, :disable, :confirm],
           :path       => mapping.path_names[:image_authentication],
           :controller => controllers[:image_authentication] do
@@ -12,7 +12,7 @@ module ActionDispatch::Routing
             put :disable, :on => :member
 
             get :confirm, :on => :member
-            put :confirm, :on => :member
+            patch :confirm, :on => :member
           end
       end
   end
