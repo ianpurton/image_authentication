@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'rails', '~> 5.0.0.rc1'
   s.add_runtime_dependency 'devise', '>= 4.1.1'
+  s.add_runtime_dependency 'coffee-rails'
 
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'rspec-rails', '~> 3.5.0.beta3'
