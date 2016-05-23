@@ -7,7 +7,7 @@ env:
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
-  - bundle exec rake
+  - bundle exec rake spec
 before_script:
   - cp spec/dummy/config/database.travis.yml spec/dummy/config/database.yml
   - psql -c 'create database image_authentication_test' -U postgres
