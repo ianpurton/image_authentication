@@ -4,7 +4,7 @@ module ImageAuthentication
       extend ActiveSupport::Concern
 
       included do
-        before_filter :handle_image_authentication
+        before_action :handle_image_authentication
       end
 
       private
