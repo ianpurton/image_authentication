@@ -39,11 +39,11 @@ class Devise::ImageAuthenticationController < DeviseController
     resource.image_authentication_enabled = false
     resource.save
 
-    redirect_to :back
+    redirect_back fallback_location: root_path
   end
 
   def show
-    return redirect_to :back if !resource.image_authentication_enabled?
+    return redirect_back(fallback_location: root_path) if !resource.image_authentication_enabled?
   end
 
   def update
