@@ -1,6 +1,6 @@
 class Devise::ImageAuthenticationController < DeviseController
 
-  prepend_before_filter :authenticate_scope!
+  prepend_before_action :authenticate_scope!
   before_filter :prepare_and_validate, :handle_image_authentication
   before_filter :setup_auth_categories, :only => [ :confirm, :show ]
 
