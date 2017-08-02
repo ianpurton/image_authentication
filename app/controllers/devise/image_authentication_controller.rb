@@ -1,8 +1,8 @@
 class Devise::ImageAuthenticationController < DeviseController
 
   prepend_before_action :authenticate_scope!
-  before_filter :prepare_and_validate, :handle_image_authentication
-  before_filter :setup_auth_categories, :only => [ :confirm, :show ]
+  before_action :prepare_and_validate, :handle_image_authentication
+  before_action :setup_auth_categories, :only => [ :confirm, :show ]
 
   def enable
     @auth_categories = resource.all_auth_categories
